@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+<style>
+body {
+    background-color: #00c0ca;
+    margin: 0;
+}
+
+.header-container {
+    background-color: #008593;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    vertical-align: middle;
+}
+
+h1 {
+    color: white;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav__social-link {
+    color: white;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+iframe {
+    border: 2px solid black;
+    width: 95%;
+    margin: 30px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header-container">
+    <div>
+        <img src='https://static.wixstatic.com/media/6a30aa_7856bce950fe4b29aad596fc2d087a57~mv2.png/v1/crop/x_0,y_0,w_350,h_388/fill/w_200,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MindChampLogo_edited.png' alt="MindChamp Logo">
+        <h1>Welcome to Mindchamp Coder's Club</h1>
+    </div>
+    <nav>
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+                <a href="html-tags.html" class="nav__link">Html</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">Css</a>
+            </li>
+            <li class="nav__item">
+                <a href="#" class="nav__link">About Us</a>
+            </li>
+            <li class="nav__item">
+                <a href="feedback.html" class="nav__link">Feedback</a>
+            </li>
+        </ul>
+        <div class="nav__social">
+            <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
+                <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
+                <i class="ri-facebook-box-line"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
+                <i class="ri-linkedin-box-line"></i>
+            </a>
+        </div>
+    </nav>
+</div>
+<iframe src="https://trinket.io/embed/html/de96a670d9" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+</body>
+</html>
