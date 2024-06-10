@@ -1,95 +1,458 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MindChamp</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css">
 
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+      body {
+         margin: 0;
+         font-family:"Montserrat Alternates", sans-serif;
+         background-color: #001220;
+         color: white;
 
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="styles.css">
+      }
 
-      <title>Mindchamp</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <img src="image.png" class="logo">
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a href="Nav.html.html" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Home</span>
-                     </a>
-                  </li>
+      /* Header Styles */
+      .header {
+         background-color: #035861;
+         padding: 20px;
+         text-align: center;
+      }
 
-                  <li class="nav__item">
-                     <a href="html-tags.html" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>HTML</span>
-                     </a>
-                  </li>
+body{
+background-color: white;
+background-image:url('bgkids3.png');
+background-repeat: no-repeat;
+background-size: cover; /* Adjust to 'contain' if needed */
+}
 
-                  <li class="nav__item">
-                     <a href="Css-tags.html" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>CSS</span>
-                     </a>
-                  </li>
 
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>About Us</span>
-                     </a>
-                  </li>
+      /*=============== VARIABLES CSS ===============*/
+      :root {
+         --header-height: 3.5rem;
 
-                  <li class="nav__item">
-                     <a href="feedback.html" class="nav__link">
-                        <i class="ri-arrow-right-up-line"></i>
-                        <span>Feedback</span>
-                     </a>
-                  </li>
-               </ul>
-               <br>
-               <br>
-               <!-- Close button -->
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-large-line"></i>
-               </div>
+         /*========== Colors ==========*/
+         /*Color mode HSL(hue, saturation, lightness)*/
+         --white-color: hsl(0, 0%, 100%);
+         --black-color: hsl(0, 0%, 0%);
+         --blue-color: #035861;
 
-               <div class="nav__social">
-                  <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
-                     <i class="ri-instagram-line"></i>
+         /*========== Font and typography ==========*/
+         /*.5rem = 8px | 1rem = 16px ...*/
+         --body-font: "Montserrat Alternates", sans-serif;
+         --h1-font-size: 1.5rem;
+         --normal-font-size: .938rem;
+
+         /*========== Font weight ==========*/
+         --font-regular: 400;
+         --font-medium: 500;
+
+         /*========== z index ==========*/
+         --z-tooltip: 10;
+         --z-fixed: 100;
+      }
+
+      /*========== Responsive typography ==========*/
+      @media screen {
+         :root {
+            --normal-font-size: 1rem;
+         }
+      }
+
+      /*=============== BASE ===============*/
+
+
+      ul {
+         list-style: none;
+      }
+
+      a {
+         text-decoration: none;
+      }
+
+      /*=============== REUSABLE CSS CLASSES ===============*/
+      .container {
+         max-width: 1120px;
+         margin-inline: 1.5rem;
+      }
+
+      /*=============== HEADER & NAV ===============*/
+      .header {
+         position: fixed;
+         width: 100%;
+         height: 70px;
+         top: 0;
+         left: 0;
+         background-color: #035861;
+         z-index: var(--z-fixed);
+      }
+
+      .nav {
+         position: relative;
+         height: var(--header-height);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .logo{
+         width: 75px;
+         cursor: pointer;
+         left:15px;
+         margin-bottom: -3px;
+         align-items: center;
+      }
+
+      .nav__close, 
+      .nav__toggle {
+         display: flex;
+         color: var(--white-color);
+         font-size: 1.5rem;
+         cursor: pointer;
+         margin-top: 17px;
+      }
+
+      /* Navigation for mobile devices */
+      @media screen and (max-width: 1150px) {
+         .logo{
+            margin-bottom: -45px;
+         }
+         .nav__menu {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            background-color:var(--blue-color);
+            width: 100%;
+            height: 100%;
+            padding: 6rem 3.5rem 4.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: left .4s;
+         }
+
+         .nav__item {
+            transform: translateX(-150px);
+            visibility: hidden;
+            transition: transform .4s ease-out, visibility .4s;
+
+         }
+
+         .nav__item:nth-child(1) {
+            transition-delay: .1s;
+         }
+         .nav__item:nth-child(2) {
+            transition-delay: .2s;
+         }
+         .nav__item:nth-child(3) {
+            transition-delay: .3s;
+         }
+         .nav__item:nth-child(4) {
+            transition-delay: .4s;
+         }
+         .nav__item:nth-child(5) {
+            transition-delay: .5s;
+         }
+      }
+
+      .nav__list, 
+      .nav__social {
+         display: flex;
+      }
+
+      .nav__list {
+         flex-direction: column;
+         row-gap: 3rem;
+      }
+
+      .nav__link {
+         position: relative;
+         color: var(--white-color);
+         font-size: var(--h1-font-size);
+         font-weight: var(--font-medium);
+         display: inline-flex;
+         align-items: center;
+         transition: opacity .4s;
+      }
+
+      .nav__link i {
+         font-size: 2rem;
+         position: absolute;
+         opacity: 0;
+         visibility: hidden;
+         color: var(--black-color);
+         transition: opacity .4s, visibility .4s;
+      }
+
+      .nav__link span {
+         position: relative;
+         transition: margin .4s;
+      }
+
+      .nav__link span::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         bottom: -6px;
+         width: 0;
+         height: 2px;
+         background-color: var(--white-color);
+         transition: width .4s ease-out;
+      }
+
+      /* Animation link on hover */
+      .nav__link:hover span {
+         margin-left: 2.5rem;
+      }
+
+      .nav__link:hover i {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .nav__link:hover span::after {
+         width: 100%;
+      }
+
+      /* Sibling fade animation */
+      .nav__list:has(.nav__link:hover) .nav__link:not(:hover) {
+         opacity: .4;
+      }
+
+      .nav__close {
+         position: absolute;
+         top: 1rem;
+         right: 1.5rem;
+      }
+
+      .nav__social {
+         column-gap: 1rem;
+      }
+
+      .nav__social-link {
+         color: var(--white-color);
+         font-size: 1.5rem;
+         transition: transform .4s;
+      }
+
+      .nav__social-link:hover {
+         transform: translateY(-.25rem);
+      }
+
+      /* Show menu */
+      .show-menu {
+         left: 0;
+      }
+
+      /* Animation link when displaying menu */
+      .show-menu .nav__item {
+         visibility: visible;
+         transform: translateX(0);
+      }
+
+      /*=============== BREAKPOINTS ===============*/
+      /* For large devices */
+      @media screen and (min-width: 1150px) {
+         .container {
+            margin-inline: auto;
+         }
+
+         .nav {
+            height: calc(var(--header-height) + 2rem);
+         }
+
+         .nav__toggle, 
+         .nav__close {
+            display: none;
+         }
+
+         .nav__link {
+            font-size: var(--normal-font-size);
+         }
+
+         .nav__link i {
+            font-size: 1.5rem;
+         }
+
+         .nav__list {
+            flex-direction: row;
+            column-gap: 3.5rem;
+         }
+
+         .nav__menu {
+            display: flex;
+            align-items: center;
+            column-gap: 3.5rem;
+         }
+      }
+
+
+
+.intro {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    background-image: url(bgwaves.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust to 'contain' if needed */
+    background-position: center top;
+    max-height: 600px; /* Adjust maximum height as needed */
+}
+
+h1{
+margin-bottom:30px;
+font-size: 100px;
+
+}
+
+
+
+
+
+
+
+      .button {
+	 
+         margin-top: 30px;
+         padding: 10px 40px;
+         font-size: 1rem;
+         font-weight: bold;
+         border: none;
+         cursor: pointer;
+         color: white;
+         background-color: #035861;
+         border-radius: 10px;
+         text-decoration: none;
+         transition: background-color 0.3s;
+      }
+
+      .button:hover {
+         background-color: #0056b3;
+      }
+
+
+
+
+.section {
+         width: 70%;
+         height: 300px;
+         text-align: center;
+         color: white;
+         background-color: #66b2b2;
+         border-radius: 5%;
+         margin: 50px auto; /* Center and add margin between sections */
+         padding: 10px;
+      }
+
+
+
+
+
+   </style>
+</head>
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <img src="image.png" class="logo">
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li class="nav__item">
+                  <a href="Nav.html.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Home</span>
                   </a>
+               </li>
 
-                  <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
-                     <i class="ri-facebook-box-line"></i>
+               <li class="nav__item">
+                  <a href="html-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>HTML</span>
                   </a>
+               </li>
 
-                  <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
-                     <i class="ri-linkedin-box-line"></i>
+               <li class="nav__item">
+                  <a href="Css-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>CSS</span>
                   </a>
-               </div>
+               </li>
+
+               <li class="nav__item">
+                  <a href="#" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>About Us</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="feedback.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Feedback</span>
+                  </a>
+               </li>
+            </ul>
+            <br>
+            <br>
+            <!-- Close button -->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
             </div>
 
-            <!-- Toggle button -->
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line"></i>
-            </div>
-         </nav>
-      </header>
+            <div class="nav__social">
+               <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
 
-      <!--==================== MAIN ====================-->
-      <main>
-         <!-- Insert page sections -->
-      </main>
+               <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
+                  <i class="ri-facebook-box-line"></i>
+               </a>
+
+               <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
+                  <i class="ri-linkedin-box-line"></i>
+               </a>
+            </div>
+         </div>
+
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== INTRO ====================-->
+   <div class="intro">
       
-      <!--=============== MAIN JS ===============-->
-      <script src="main.js"></script>
-   </body>
-</html>
+         <h1 style = "font-size: 50px;margin-top:50px;"><b>Welcome to MindChamp</b></h1>
+
+         <p style = "font-size:20px;">Your gateway to mastering web development!</p>
+<br>
+         
+      </div>
+
+   <div class="section">
+      <h1 style = "margin-top:5px;"><b>HTML</b></h1>
+      <h2>Build the Web, One Tag At a Time!</h2>
+	<p> Build Websites!</p>
+      <a href="#" class="button">Start Here</a>
+   </div>
+
+   <div class="section" style = "margin-bottom:10px;">
+      <h1 style = "margin-top:5px;"><b>CSS</b></h1>
+      <h2>Exercise Your Imagination!</h2>
+      <p>Decorate webpages</p>
+      <a href="#" class="button">Start Here</a>
+   </div>
+
+ <script src="main.js"></script>
+  
+</body>
 </html>
