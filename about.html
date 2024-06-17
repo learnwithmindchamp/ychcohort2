@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>MindChamp</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css">
-
-   <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+<style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
       body {
          margin: 0;
@@ -27,7 +24,7 @@ body{
 background-color: white;
 background-image:url('bgkids3.png');
 background-repeat: no-repeat;
-background-size: cover; 
+background-size: cover; /* Adjust to 'contain' if needed */
 }
 
 
@@ -289,79 +286,87 @@ background-size: cover;
          }
       }
 
-}
-.about-us{
-  height: 100vh;
-  width: 100%;
-  padding: 90px 0;
-}
-.pic{
-  height: auto;
-  width:  302px;
-}
-.about{
-  width: 1130px;
-  max-width: 85%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.text{
-  width: 540px;
-}
-.text h2{
-  font-size: 90px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.text h5{
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-span{
-  color: #00415a;
-}
-.text p{
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: 1px;
-}
-.data{
-  margin-top: 30px;
-}
-.submit{
-  font-size: 18px;
-  background: #4070f4;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  padding: 8px 25px;
-  border-radius: 6px;
-  transition: 0.5s;
-}
-.submit:hover{
-  background: #000;
-  border: 1px solid #4070f4;
+
+
+
+iframe {
+    border: 2px solid black;
+    width: 95%;
+    margin: 30px;
 }
 
-.submiti{
-  font-size: 18px;
-  background: black;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  padding: 8px 25px;
-  transition: 0.5s;
-margin-top:5px;
-}
-.submiti:hover{
-  background: #000;
-  border: 1px solid #4070f4;
-}
 </style>
 </head>
+<body>
+
+   <header class="header" id="header">
+      <nav class="nav container">
+         <img src="image.png" class="logo">
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li class="nav__item">
+                  <a href="Nav.html.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Home</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="html-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>HTML</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="Css-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>CSS</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="#" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>About Us</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="feedback.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Feedback</span>
+                  </a>
+               </li>
+            </ul>
+            <br>
+            <br>
+            <!-- Close button -->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
+            </div>
+
+            <div class="nav__social">
+               <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
+
+               <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
+                  <i class="ri-facebook-box-line"></i>
+               </a>
+
+               <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
+                  <i class="ri-linkedin-box-line"></i>
+               </a>
+            </div>
+         </div>
+
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
 <body>
 <form action="index.html">
 </form>
