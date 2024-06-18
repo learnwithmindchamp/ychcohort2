@@ -299,6 +299,40 @@ iframe {
     margin: 30px;
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+text-align: center;
+margin-top: 250px;
+margin-right: 30px;
+}
+
+.pic {
+  max-width: 50%; /* Adjust this value as needed */
+  height: auto;
+margin-left:20px;
+}
+
+.text {
+  max-width: 45%; /* Adjust this value as needed */
+  margin-left: 20px; /* Space between image and text */
+color:black;
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pic, .text {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -374,13 +408,13 @@ iframe {
 <body>
 <form action="index.html">
 </form>
-            <a href="index.html" class="submiti">Home</a>
+            <a href="index.html" class="submit">Home</a>
       <section class="about-us">
         <div class="about">
           <img src="image.png" class="pic">
           <div class="text">
-            <h2>About Us</h2>
-            <h5>Made by <span><b>Noel, Shaurya and Mithra</b></span></h5>
+            <h1 style = "font-size:40px;"><b>About Us</b></h1>
+            <h2>Made by <span><b>Noel, Shaurya and Mithra</b></span></h2>
               <p>This website was created by students of Mindchamp, A female-led organisation that specialises in bringing the art of codingand tech-awareness to childern from the ages of 7 to 18. Spanning across 12 countries, with mentions from multiple nationally recognised media outlets, this company was created by IIT and NYU graduates as a means to bridge the current generation with the future. Offering App, Game and Website development, the company encourages creativity, while still nurturing logical intuition through courses on the Python language and the basics of AI and Robotics. </p>
             <div class="data">
             
