@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css">
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
   
@@ -13,7 +14,7 @@
       color: white;
       background-image: url('bgkids3.png');
       background-repeat: no-repeat;
-      background-size: cover; /* Adjust to 'contain' if needed */
+      background-size: cover;
   }
 
   /* Header Styles */
@@ -55,16 +56,12 @@
   }
 
   .nav__link {
-      color: var(--white-color);
-      font-size: var(--normal-font-size);
-      font-weight: var(--font-medium);
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
       display: inline-flex;
       align-items: center;
       transition: opacity .4s;
-  }
-
-  .nav__link:hover span::after {
-      width: 100%;
   }
 
   .nav__link span::after {
@@ -74,8 +71,12 @@
       bottom: -6px;
       width: 0;
       height: 2px;
-      background-color: var(--white-color);
+      background-color: white;
       transition: width .4s ease-out;
+  }
+
+  .nav__link:hover span::after {
+      width: 100%;
   }
 
   .nav__social {
@@ -84,7 +85,7 @@
   }
 
   .nav__social-link {
-      color: var(--white-color);
+      color: white;
       font-size: 1.5rem;
       transition: transform .4s;
   }
@@ -98,7 +99,7 @@
       display: none;
       cursor: pointer;
       font-size: 1.5rem;
-      color: var(--white-color);
+      color: white;
   }
 
   @media screen and (max-width: 1150px) {
@@ -106,7 +107,7 @@
           position: fixed;
           left: -100%;
           top: 0;
-          background-color: var(--blue-color);
+          background-color: #035861;
           width: 100%;
           height: 100%;
           flex-direction: column;
@@ -133,7 +134,8 @@
   iframe {
       border: 2px solid black;
       width: 95%;
-      margin: 30px;
+      margin: 100px auto;
+      display: block;
   }
 
 </style>
@@ -141,7 +143,7 @@
 <body>
 
    <header class="header" id="header">
-      <img src="image.png" class="logo">
+      <img src="image.png" class="logo" alt="Logo">
       <div class="nav__toggle" id="nav-toggle">
          <i class="ri-menu-line"></i>
       </div>
@@ -177,9 +179,7 @@
       </div>
    </header>
 
-   <br><br><br>
-      
-<iframe style = "margin-top: 200px;" src="https://trinket.io/embed/html/45a82d99fa" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+   <iframe src="https://trinket.io/embed/html/45a82d99fa" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 <script>
   const navMenu = document.getElementById('nav-menu');
