@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -15,7 +15,7 @@
 
       /* Header Styles */
       .header {
-         background-color: #035861;
+         background-color: #333;
          padding: 20px;
          text-align: center;
       }
@@ -36,7 +36,7 @@ background-size: cover; /* Adjust to 'contain' if needed */
          /*Color mode HSL(hue, saturation, lightness)*/
          --white-color: hsl(0, 0%, 100%);
          --black-color: hsl(0, 0%, 0%);
-         --blue-color: #035861;
+         --blue-color: #333;
 
          /*========== Font and typography ==========*/
          /*.5rem = 8px | 1rem = 16px ...*/
@@ -84,7 +84,7 @@ background-size: cover; /* Adjust to 'contain' if needed */
          height: 70px;
          top: 0;
          left: 0;
-         background-color: #035861;
+         background-color: #333;
          z-index: var(--z-fixed);
       }
 
@@ -299,42 +299,74 @@ iframe {
 </head>
 <body>
 
-<div class="header-container">
-    <div>
-        <img src='https://static.wixstatic.com/media/6a30aa_7856bce950fe4b29aad596fc2d087a57~mv2.png/v1/crop/x_0,y_0,w_350,h_388/fill/w_200,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/MindChampLogo_edited.png' alt="MindChamp Logo">
-        <h1>Welcome to Mindchamp Coder's Club</h1>
-    </div>
-    <nav>
-        <ul class="nav__list">
-            <li class="nav__item">
-                <a href="index.html" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-                <a href="html-tags.html" class="nav__link">Html</a>
-            </li>
-            <li class="nav__item">
-                <a href="Css-tags.html" class="nav__link">Css</a>
-            </li>
-            <li class="nav__item">
-                <a href="about.html" class="nav__link">About Us</a>
-            </li>
-            <li class="nav__item">
-                <a href="feedback.html" class="nav__link">Feedback</a>
-            </li>
-        </ul>
-        <div class="nav__social">
-            <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
-                <i class="ri-instagram-line"></i>
-            </a>
-            <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
-                <i class="ri-facebook-box-line"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
-                <i class="ri-linkedin-box-line"></i>
-            </a>
-        </div>
-    </nav>
-</div>
+   <header class="header" id="header">
+      <nav class="nav container">
+         <img src="image.png" class="logo">
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li class="nav__item">
+                  <a href="index.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Home</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="html-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>HTML</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="Css-tags.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>CSS</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="about.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>About Us</span>
+                  </a>
+               </li>
+
+               <li class="nav__item">
+                  <a href="feedback.html" class="nav__link">
+                     <i class="ri-arrow-right-up-line"></i>
+                     <span>Feedback</span>
+                  </a>
+               </li>
+            </ul>
+            <br>
+            <br>
+            <!-- Close button -->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
+            </div>
+
+            <div class="nav__social">
+               <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
+                  <i class="ri-instagram-line"></i>
+               </a>
+
+               <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
+                  <i class="ri-facebook-box-line"></i>
+               </a>
+
+               <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
+                  <i class="ri-linkedin-box-line"></i>
+               </a>
+            </div>
+         </div>
+
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
 <iframe style = "margin-top: 200px;" src="https://trinket.io/embed/html/7a6ab17e28" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 
