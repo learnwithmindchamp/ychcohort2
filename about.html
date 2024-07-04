@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f0f8ff;
+            background-color: #00c0ca;
             margin: 0;
             text-align: center; /* Center text and images */
             font-family: 'Arial', sans-serif;
         }
 
         .header {
-            background-color: #333;
+            background-color: #008593;
             color: #fff;
             padding: 10px;
+	    height:80px;
         }
 
         .container {
@@ -27,7 +28,7 @@
         }
 
         h1 {
-            color: #333;
+            color: #008593;
             font-size: 4rem;
             margin-top: 60px;
         }
@@ -37,19 +38,20 @@
             font-size: 2rem;
         }
 
-        .image-container {
+        .team-member {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
-        .image-container img {
+        .team-member img {
             width: 300px;
             height: 300px;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+            margin: 20px;
         }
 
         .description {
@@ -57,8 +59,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            margin-bottom: 40px;
-            width: 80%;
+            width: 40%;
+            text-align: left;
+            margin: 20px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -70,13 +73,18 @@
                 font-size: 2.5rem;
             }
 
-            .image-container img {
+            .team-member {
+                flex-direction: column;
+            }
+
+            .team-member img {
                 width: 90%;
                 height: auto;
             }
 
             .description {
                 width: 90%;
+                text-align: center;
             }
         }
     </style>
@@ -144,22 +152,26 @@
         </nav>
     </header>
     <main class="container">
-        <h1>About Us</h1>
-        <div class="image-container">
+        <h1 style = "color:black;" >About Us</h1>
+        <div class="team-member">
             <img src="noel.jpg" alt="Noel">
             <div class="description">
                 <h2>NOEL</h2>
-                <p>Description about Noel goes here. Make it short and sweet, but informative!</p>
+                <p>I am S.Noel shane, Currently studying in the 7th grade, I am 11 years old and well versed in HTML, and am currently learning the Python language at Mindchamp. I have also studied app development and am doing very well in my school academics.</p>
             </div>
+        </div>
+        <div class="team-member">
             <img src="shaurya.jpg" alt="Shaurya">
             <div class="description">
                 <h2>SHAURYA</h2>
                 <p>Description about Shaurya goes here. Make it short and sweet, but informative!</p>
             </div>
+        </div>
+        <div class="team-member">
             <img src="mithra.jpeg" alt="Mithra">
             <div class="description">
                 <h2>MITHRA</h2>
-                <p>Description about Mithra goes here. Make it short and sweet, but informative!</p>
+                <p>Mithra here! I'm an 18 yr old aspiring coder, with a fair understanding in website development, multiple coding languages, Machine Learning and AI techniques. Much of my interest in technology comes from Mindchamps' courses, and its wonderful teachers. Besides coding, my interests include History, Literature, Reading, and Shopping Therapy! </p>
             </div>
         </div>
     </main>
