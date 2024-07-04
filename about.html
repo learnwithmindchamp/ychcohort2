@@ -8,107 +8,84 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #00c0ca;
+            background-color: #f0f8ff;
             margin: 0;
             text-align: center; /* Center text and images */
+            font-family: 'Arial', sans-serif;
         }
 
-        .container1 {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .header1 {
+        .header {
             background-color: #333;
             color: #fff;
             padding: 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .tags {
-            margin-top: 20px;
-        }
-
-        .event {
-            margin: 60px;
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
+        h1 {
+            color: #333;
+            font-size: 4rem;
+            margin-top: 60px;
         }
 
         h2 {
-            color: #333;
-        }
-
-        p {
             color: #666;
+            font-size: 2rem;
         }
 
-        .body1 {
-            overflow-y: scroll;
-            height: 100vh;
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
 
-        .submiti {
-            font-size: 18px;
-            background: black;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            padding: 3% 25px;
-            transition: 0.5s;
-            position: absolute;
+        .image-container img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
 
-        .submiti:hover {
-            background: #000;
-            border: 1px solid #4070f4;
-        }
-
-        .headings {
-            font-size: 5rem;
-            text-align: center;
-            color: #008593;
-        }
-
-        .mainh {
-            font-size: 3rem;
-            color: #008593;
-        }
-
-        img {
-            width: 600px; /* Occupy 75% of the page width */
-            height: 600px;
-            border-radius: 20px; /* Rounded edges */
-            margin-bottom: 20px; /* Space between images */
+        .description {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 40px;
+            width: 80%;
         }
 
         @media only screen and (max-width: 768px) {
-            /* Adjusted styles for smaller screens */
-            .body1 {
-                font-size: 14px;
+            .container {
+                width: 100%;
             }
 
-            .headings {
-                font-size: 2rem;
+            h1 {
+                font-size: 2.5rem;
             }
 
-            /* Example: Hide a specific element */
-            .sidebar {
-                display: none;
+            .image-container img {
+                width: 90%;
+                height: auto;
             }
 
-            img {
-                width: 90%; /* Adjust image width for smaller screens */
+            .description {
+                width: 90%;
             }
         }
     </style>
-    <title>About us</title>
+    <title>About Us</title>
 </head>
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <img src="image.png" style = "height: 80px;width:80px;"class="logo">
+            <img src="image.png" style="height: 80px; width: 80px;" class="logo" alt="Logo">
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -166,19 +143,25 @@
             </div>
         </nav>
     </header>
-
-    <main>
-        
-        <h1 style="color: white; font-size:120px;margin-top: 60px;">About Us</h1>
-        <br>
-        <br>
-    
-        <img src="noel.jpg" alt="Noel" >
-        <h2>NOEL</h2>
-        <img src="shaurya.jpg" alt="Shaurya" >
-        <h2>SHAURYA</h2>
-        <img src="mithra.jpeg" style = "height: 500px;" alt="Mithra">
-        <h2>MITHRA</h2>
+    <main class="container">
+        <h1>About Us</h1>
+        <div class="image-container">
+            <img src="noel.jpg" alt="Noel">
+            <div class="description">
+                <h2>NOEL</h2>
+                <p>Description about Noel goes here. Make it short and sweet, but informative!</p>
+            </div>
+            <img src="shaurya.jpg" alt="Shaurya">
+            <div class="description">
+                <h2>SHAURYA</h2>
+                <p>Description about Shaurya goes here. Make it short and sweet, but informative!</p>
+            </div>
+            <img src="mithra.jpeg" alt="Mithra">
+            <div class="description">
+                <h2>MITHRA</h2>
+                <p>Description about Mithra goes here. Make it short and sweet, but informative!</p>
+            </div>
+        </div>
     </main>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
