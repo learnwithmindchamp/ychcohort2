@@ -1,189 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--=============== REMIXICONS ===============-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-    <!--=============== GOOGLE FONTS ===============-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        
-        body {
-            background-color: #f5f5f5;
-            margin: 0;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+  <style>
+    /* Global styles */
+    body {
+      background-color: #f5f5f5;
+      margin: 0;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+    }
 
-        .header {
-            background-color: #008593;
-            color: #fff;
-            padding: 20px;
-        }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 50px 0;
+    }
 
-        .header .nav__link {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #008593;
+      font-size: 3rem;
+      margin: 50px 0;
+    }
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 50px 0;
-        }
+    .team-member {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #008593;
-            font-size: 3rem;
-            margin: 50px 0;
-        }
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 20px;
+      transition: transform 0.3s;
+    }
 
-        .team-member {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+    .team-member img:hover {
+      transform: scale(1.05);
+    }
 
-        .team-member img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 20px;
-            transition: transform 0.3s;
-        }
+    .description {
+      text-align: left;
+      margin: 20px;
+      max-width: 500px;
+    }
 
-        .team-member img:hover {
-            transform: scale(1.05);
-        }
+    .description h2 {
+      font-family: 'Playfair Display', serif;
+      color: #008593;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
 
-        .description {
-            text-align: left;
-            margin: 20px;
-            max-width: 500px;
-        }
+    @media only screen and (max-width: 768px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
 
-        .description h2 {
-            font-family: 'Playfair Display', serif;
-            color: #008593;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+      h1 {
+        font-size: 2rem;
+      }
 
-        @media only screen and (max-width: 768px) {
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
+      .team-member {
+        flex-direction: column;
+        padding: 20px;
+      }
 
-            h1 {
-                font-size: 2rem;
-            }
+      .team-member img {
+        width: 150px;
+        height: 150px;
+      }
 
-            .team-member {
-                flex-direction: column;
-                padding: 20px;
-            }
+      .description {
+        text-align: center;
+      }
+    }
 
-            .team-member img {
-                width: 150px;
-                height: 150px;
-            }
+    /* Navigation and Header */
+    .header {
+      position: fixed;
+      width: 100%;
+      height: 70px;
+      top: 0;
+      left: 0;
+      background-color: #035861;
+      z-index: 1000; /* Ensure navigation bar is above other content */
+    }
 
-            .description {
-                text-align: center;
-            }
-        }
-    </style>
-    <title>About Us</title>
+    .nav {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .nav__toggle {
+      display: none; /* Hidden by default on larger screens */
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 15px;
+    }
+
+    .nav__menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .nav__item {
+      margin-right: 20px;
+margin-bottom:60px;
+    }
+
+    .nav__link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .nav__link:hover {
+      color: black /* Yellow color for hover */
+    }
+
+    /* Show menu */
+    .show-menu .nav__toggle {
+      display: block; /* Display toggle button when menu is shown */
+    }
+
+    .show-menu .nav__menu {
+      display: block; /* Display menu items when menu is shown */
+    }
+
+    /* Social icons */
+    .nav__social {
+      display: flex;
+      align-items: center;
+margin-bottom:60px;
+    }
+
+    .nav__social-link {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-left: 10px;
+      transition: transform 0.3s;
+    }
+
+    .nav__social-link:hover {
+      transform: translateY(-2px); /* Lift the icon slightly on hover */
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <img src="image.png" style="height: 80px; width: 80px;" class="logo" alt="Logo">
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="html-tags.html" class="nav__link">HTML</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="Css-tags.html" class="nav__link">CSS</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="about.html" class="nav__link">About Us</a>
-                    </li>
-                    
-                </ul>
-                <br>
-                <div class="nav__social">
-                    <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
-                        <i class="ri-instagram-line"></i>
-                    </a>
-                    <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
-                        <i class="ri-facebook-box-line"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
-                        <i class="ri-linkedin-box-line"></i>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main class="container">
-        <h1>About Us</h1>
-        <div class="team-member">
-            <img src="noel.jpg" alt="Noel">
-            <div class="description">
-                <h2>NOEL</h2>
-                <p>I am S.Noel Shane, currently studying in the 7th grade, 11 years old, well-versed in HTML, and currently learning Python at Mindchamp. I have also studied app development and am doing very well in my school academics.</p>
-            </div>
+  <header class="header">
+    <nav class="nav container">
+      <img src="image.png" class="logo" alt="Logo">
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="html-tags.html" class="nav__link">HTML</a>
+          </li>
+          <li class="nav__item">
+            <a href="css-tags.html" class="nav__link">CSS</a>
+          </li>
+          <li class="nav__item">
+            <a href="about.html" class="nav__link">About Us</a>
+          </li>
+        </ul>
+        <div class="nav__social">
+          <a href="https://www.instagram.com/mindchamp.in/" target="_blank" class="nav__social-link">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://www.facebook.com/mindchamp.in" target="_blank" class="nav__social-link">
+            <i class="ri-facebook-box-line"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/mindchamp/" target="_blank" class="nav__social-link">
+            <i class="ri-linkedin-box-line"></i>
+          </a>
         </div>
-        <div class="team-member">
-            <img src="shaurya.jpg" alt="Shaurya">
-            <div class="description">
-                <h2>SHAURYA</h2>
-                <p>Shaurya is a dedicated 13-year-old student at Jebel Ali School in Dubai with a clear vision for his future. He dreams of becoming a commercial pilot but his passion for technology and coding is equally impressive. Currently, he is channeling his skills into developing an app called Tipp. This ambitious project is backed by Buildspace, a prominent US-based platform specializing in project management. With a keen eye for innovation and a drive to succeed, Shaurya is on a remarkable journey, balancing his academic responsibilities with his entrepreneurial aspirations.</p>
-            </div>
-        </div>
-        <div class="team-member">
-            <img src="mithra.jpeg" alt="Mithra">
-            <div class="description">
-                <h2>MITHRA</h2>
-                <p>Mithra here! I'm an 18-year-old aspiring coder, with a fair understanding of website development, multiple coding languages, Machine Learning, and AI techniques. Much of my interest in technology comes from Mindchamps' courses and its wonderful teachers. Besides coding, my interests include History, Literature, Reading, and Shopping Therapy!</p>
-            </div>
-        </div>
-    </main>
-    <!--=============== MAIN JS ===============-->
-    <script>
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        const navClose = document.getElementById('nav-close');
+      </div>
+    </nav>
+  </header>
 
-        if(navToggle){
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show-menu');
-            });
-        }
+  <main class="container">
+    <h1>About Us</h1>
+    <div class="team-member">
+      <img src="noel.jpg" alt="Noel">
+      <div class="description">
+        <h2>NOEL</h2>
+        <p>I am S.Noel Shane, currently studying in the 7th grade, 11 years old, well-versed in HTML, and currently learning Python at Mindchamp. I have also studied app development and am doing very well in my school academics.</p>
+      </div>
+    </div>
+    <div class="team-member">
+      <img src="shaurya.jpg" alt="Shaurya">
+      <div class="description">
+        <h2>SHAURYA</h2>
+        <p>Shaurya is a dedicated 13-year-old student at Jebel Ali School in Dubai with a clear vision for his future. He dreams of becoming a commercial pilot but his passion for technology and coding is equally impressive. Currently, he is channeling his skills into developing an app called Tipp. This ambitious project is backed by Buildspace, a prominent US-based platform specializing in project management. With a keen eye for innovation and a drive to succeed, Shaurya is on a remarkable journey, balancing his academic responsibilities with his entrepreneurial aspirations.</p>
+      </div>
+    </div>
+    <div class="team-member">
+      <img src="mithra.jpeg" alt="Mithra">
+      <div class="description">
+        <h2>MITHRA</h2>
+        <p>Mithra here! I'm an 18-year-old aspiring coder, with a fair understanding of website development, multiple coding languages, Machine Learning, and AI techniques. Much of my interest in technology comes from Mindchamps' courses and its wonderful teachers. Besides coding, my interests include History, Literature, Reading, and Shopping Therapy!</p>
+      </div>
+    </div>
+  </main>
 
-        if(navClose){
-            navClose.addEventListener('click', () => {
-                navMenu.classList.remove('show-menu');
-            });
-        }
-    </script>
+  <!-- Scripts -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show-menu');
+    });
+  </script>
 </body>
 </html>
